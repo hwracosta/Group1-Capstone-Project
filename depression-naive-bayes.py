@@ -1,3 +1,10 @@
+# ---
+# jupyter:
+#   jupytext:
+#     formats: ipynb,py
+#     sync: true
+# ---
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import CategoricalNB
@@ -6,7 +13,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Load the depression dataset
-dataset_path = '/Users/h/Desktop/Code/CS176/Group 1_Capstone Project/Depression Dataset.csv'
+dataset_path = './Depression Dataset.csv'
 dataset = pd.read_csv(dataset_path)
 
 # Convert all columns to categorical data type
