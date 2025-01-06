@@ -3,6 +3,11 @@
 #   jupytext:
 #     formats: ipynb,py
 #     sync: true
+#     text_representation:
+#       extension: .py
+#       format_name: light
+#       format_version: '1.5'
+#       jupytext_version: 1.16.6
 # ---
 
 # Import necessary libraries
@@ -18,7 +23,7 @@ from kneed import KneeLocator
 
 # ## 1. Load the Dataset
 print("Step 1: Loading the dataset...")
-file_path = '.'  # Replace with actual path
+file_path = './Depression Dataset.csv'
 df = pd.read_csv(file_path)
 print(f"Dataset loaded successfully! Shape: {df.shape}")
 df.head()
