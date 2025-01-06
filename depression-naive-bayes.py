@@ -10,16 +10,32 @@
 #       jupytext_version: 1.16.6
 # ---
 
+# Import necessary libraries
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import CategoricalNB
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, precision_score, recall_score, f1_score
+from sklearn.feature_selection import mutual_info_classif
 import matplotlib.pyplot as plt
 import numpy as np
+import seaborn as sns
 
-# Load the depression dataset
-dataset_path = './Depression Dataset.csv'
+# Load the dataset
+dataset_path = 'C:/Users/Cindy/Downloads/Depression Dataset.csv'
 dataset = pd.read_csv(dataset_path)
+print(f"Dataset loaded successfully! Shape: {dataset.shape}")
+dataset.head()
+
+# Check for incomplete or missing values
+if dataset.isnull().sum().sum() > 0:
+    print("Missing values detected.")
+else:
+    print("No missing values detected.")
+
+# Check for noisy or inconsistent entries
+for column in dataset.columns:
+    unique_values = dataset[column].unique()
+    print(f"{column} - Unique Values: {unique_values}")
 
 # Convert all columns to categorical data type
 for column in dataset.columns:
